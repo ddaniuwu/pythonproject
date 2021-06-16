@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Graphics Continuation{% endblock %}
+
+{% block head %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('.static', filename='styles.css') }}">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script src="{{ url_for('.static', filename='graphics2.js') }}"></script>
+<script src="{{ url_for('.static', filename='bar2.js') }}"></script>
+
+{% endblock %}
+
+
+{% block content %}
+{% include 'navbar.html' %}
+<h1 class="text-center">Dashboard</h1>
+<div class="text-center">
+      <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo"class="card-img-top" alt="...">
+</div>
+    <div id="combo_div"></div>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+¡{% include 'footer.html' %}
+
+{% endblock %}

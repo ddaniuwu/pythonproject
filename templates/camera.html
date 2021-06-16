@@ -1,0 +1,28 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Graphics{% endblock %}
+
+{% block head %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('.static', filename='styles.css') }}">
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="{{ url_for('.static', filename='tables.js') }}"></script>
+<script src="{{ url_for('.static', filename='bar.js') }}"></script>
+<script src="{{ url_for('.static', filename='graphic.js') }}"></script>
+<script src="{{ url_for('.static', filename='alert.js') }}"></script>
+
+{% endblock %}
+
+
+{% block content %}
+{% include 'navbar.html' %}
+<h1 class="text-center">Identificar objeto</h1>
+<div class="text-center">
+      <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo"class="card-img-top" alt="...">
+        <button class="btn btn-success"> Aceptar</button>
+        <button class="btn btn-danger" onclick="Message()"> Detener</button>
+
+    </div>
+¡{% include 'footer.html' %}
+
+{% endblock %}

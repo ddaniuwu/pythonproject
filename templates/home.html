@@ -1,0 +1,37 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block styles %}
+
+{{super()}}
+ <link rel="stylesheet" href="{{ url_for('.static', filename='styles.css') }}">
+{% endblock %}
+
+
+
+{%  block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card text-center">
+    <div class="card-header">
+      <h5 class="h1">Bienvenido</h3>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Arlette</h5>
+      <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo"class="card-img-top" alt="...">
+
+      <p class="card-text text-center h4">
+          SmarTrash es un proyecto cuyo proposito es atender necesidades
+          de separación de basura en el TESCI ,<br> así como 
+          impulsar el uso de las tecnologias para 
+          favorecer el medio ambiente. 
+      </p>
+      <a href="#" class="btn btn-primary">Comenzar</a>
+    </div>
+  </div>
+º
+  {% include 'footer.html' %}
+
+{% endblock %}

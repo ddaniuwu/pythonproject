@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} signup {% endblock %}
+
+{% block head %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('.static', filename='styles.css') }}">
+<script src="{{ url_for('.static', filename='alert.js') }}"></script>
+
+{% endblock %}
+
+{% block navbar %}
+    <div class="container text-center">
+      <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo">  
+          <h1 class="h1 text-light">Login</h1>
+            <form>
+                <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" required>
+                
+                <label for="exampleInputEmail1" class="form-label">Apellido Paterno</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" required>
+
+
+                <label for="exampleInputEmail1" class="form-label">Apellido Materno</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" required>
+
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" required>
+              <button type="submit" class="btn btn-primary" onclick="MessageWelcome()">Submit</button>
+            </form>
+        </div>
+{% endblock %}
