@@ -1,5 +1,5 @@
 function message(){
-    alert("Bienvenida Arlet")
+    alert("Bienvenido")
 }
 
 function Message(){
@@ -8,5 +8,5 @@ function Message(){
 
 
 function MessageWelcome(){
-    alert("Bienvenido")
+    alert("Usuario registrado con exito!")
 }
