@@ -1,5 +1,7 @@
-from flask import Flask , render_template 
+from flask import Flask , render_template , request
 from flask_bootstrap import Bootstrap
+from werkzeug.utils import redirect
+from  service.controller_users import insertar_usuario
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
@@ -9,12 +11,12 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/login/user')
+@app.route('/home')
 def home():
     return render_template('home.html')
 
 
-@app.route('/login/user/graphics')
+@app.route('/home/graphics')
 def graphics():
     return render_template('graphics.html')
 
@@ -29,6 +31,15 @@ def camera():
 def signup():
     return render_template('signup.html')
 
+@app.route("/save_user" , methods= ["POST"])
+def save_user():
+    nombre = request.form["Nombre"]
+    ap_paterno = request.form["A_Paterno"]
+    ap_materno = request.form["A_Materno"]
+    email = request.form["email"]
+    contraseña = request.form["password"]
+    insertar_usuario(nombre , ap_paterno , ap_materno , email , contraseña)
+    return redirect("/home")
 
 
 @app.route('/login/user/graphics2')
