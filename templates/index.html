@@ -5,19 +5,28 @@
 {{super()}}
 <link rel="stylesheet" href="{{ url_for('.static', filename='styles.css') }}">
 <script src="{{ url_for('.static', filename='alert.js') }}"></script>
-
 {% endblock %}
 
 {% block navbar %}
     <div class="container text-center">
+      
       <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo">  
-          <h1 class="h1 text-light">Login</h1>
-            <form action="{{url_for('log_user')}}" method="POST">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="email" required>
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
-              <button type="submit" class="btn btn-primary" onclick="message()">Submit</button>
-            </form>
-        </div>
+          
+      <h1 class="h1 text-light">Login</h1>
+            
+      <form action="{{url_for('log_user')}}" method="POST">
+                
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="email" required>
+                
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+
+        <button type="submit" class="btn btn-primary" onclick="message()">Submit</button><br>
+
+      </form>
+
+      <a href="{{ url_for('signup')}}">Registrate</a>
+
+    </div>
 {% endblock %}

@@ -4,7 +4,6 @@
 {% block head %}
 {{super()}}
 <link rel="stylesheet" href="{{ url_for('.static', filename='styles.css') }}">
-
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="{{ url_for('.static', filename='tables.js') }}"></script>
 <script src="{{ url_for('.static', filename='bar.js') }}"></script>
@@ -13,13 +12,21 @@
 
 {% block content %}
 {% include 'navbar.html' %}
-<h1 class="text-center">Dashboard</h1>
-<div class="text-center">
-      <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo"class="card-img-top" alt="...">
-</div>
+    <h1 class="text-center">Dashboard</h1>
+
+    <div class="text-center">
+
+      <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo"class="card-img-top" alt="logo"><br>
+      <a href="{{url_for('graphics2')}}" class="h3 text-center">Más estadisticas...</a>
+    
+    </div>
+    
     <div id="table_div"></div>
     <div id="chart_div"></div>
     <div id="chart_bar_div"></div>
+
+
+    
 ¡{% include 'footer.html' %}
 
 {% endblock %}

@@ -10,19 +10,35 @@
 <script src="{{ url_for('.static', filename='bar.js') }}"></script>
 <script src="{{ url_for('.static', filename='graphic.js') }}"></script>
 <script src="{{ url_for('.static', filename='alert.js') }}"></script>
-
 {% endblock %}
 
 
 {% block content %}
 {% include 'navbar.html' %}
+
+
 <h1 class="text-center">Identificar objeto</h1>
 <div class="text-center">
       <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo"class="card-img-top" alt="...">
-        <button class="btn btn-success"> Aceptar</button>
-        <button class="btn btn-danger" onclick="Message()"> Detener</button>
-
+        <button class="btn btn-success">Abrir camara</button>
+        <button class="btn btn-danger" id="add"  onclick="agregarFila()">Play</button>
+        <button class="btn btn-danger" onclick="agregarFilaCajas()">Next</button>
     </div>
-¡{% include 'footer.html' %}
 
+<div>
+    <table border="1" class="table table-striped" id="tablaprueba">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Residuo</th>
+          <th>Piezas</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div id="table_div"></div>
+
+{% include 'footer.html' %}
 {% endblock %}

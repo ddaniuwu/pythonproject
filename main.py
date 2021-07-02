@@ -36,6 +36,12 @@ def graphics():
     return render_template('graphics.html')
 
 
+
+@app.route('/home/graphics2')
+def graphics2():
+    return render_template('graphics2.html')
+
+
 @app.route('/home/camera')
 def camera():
     return render_template('camera.html')
@@ -55,8 +61,3 @@ def save_user():
     contraseña = request.form["password"]
     insertar_usuario(nombre , ap_paterno , ap_materno , email , contraseña)
     return redirect("/home")
-
-
-@app.route('/home/graphics2')
-def graphics2():
-    return render_template('graphics2.html')

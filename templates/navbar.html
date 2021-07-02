@@ -1,14 +1,14 @@
 
 <div class="container">
-<nav class="" >
+<nav>
     <div class="container-fluid ">
-      <a class="navbar-brand " href="#">Home</a>
+      <a class="navbar-brand " href="{{ url_for('home')}}">Home</a>
     </div>
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Dashboard</a>
+        <a class="navbar-brand" href="{{ url_for('graphics')}}">Dashboard</a>
       </div>
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Camara</a>
+        <a class="navbar-brand" href="{{ url_for('camera')}}">Camara</a>
       </div>
 </nav>
 </div>
