@@ -1,4 +1,8 @@
 
 function Message(){
-    alert("Objeto reconocido")
+    alert("Bienvenido")
+}
+
+function MessageWelcome(){
+    alert("Usuario Registrado")
 }

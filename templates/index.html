@@ -14,17 +14,15 @@
           
       <h1 class="h1 text-light">Login</h1>
             
-      <form action="{{url_for('log_user')}}" method="POST">
+      <form >
                 
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="email" required>
                 
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
-
-        <button type="submit" class="btn btn-primary" onclick="message()">Submit</button><br>
-
       </form>
+      <a href="{{url_for('home')}}"><button class="btn btn-primary" onclick="Message()">Submit</button><br></a>
 
       <a href="{{ url_for('signup')}}">Registrate</a>
 

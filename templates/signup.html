@@ -5,14 +5,13 @@
 {{super()}}
 <link rel="stylesheet" href="{{ url_for('.static', filename='styles.css') }}">
 <script src="{{ url_for('.static', filename='alert.js') }}"></script>
-
 {% endblock %}
 
 {% block navbar %}
     <div class="container text-center">
       <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo">  
           <h1 class="h1 text-light">Login</h1>
-            <form action="{{url_for('save_user') }}" method="POST">
+            <form >
                 <label for="exampleInputEmail1" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" name="Nombre" required>
                 
@@ -29,7 +28,7 @@
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
 
-              <button type="submit" class="btn btn-primary" onclick="MessageWelcome()">Submit</button>
             </form>
+            <a href="{{url_for('index')}}"><button class="btn btn-primary" onclick="MessageWelcome()">Submit</button></a>
         </div>
 {% endblock %}

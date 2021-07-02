@@ -12,18 +12,6 @@ bootstrap = Bootstrap(app)
 def index():
     return render_template('index.html')
 
-@app.route('/log_user' , methods=["POST"])
-def log_user():
-    email = request.form["email"]
-    password = request.form["password"]
-    conexion = obtener_conexion()
-    with conexion.cursor() as cursor:
-        cursor.execute('SELECT * FROM usuarios WHERE email = %s AND password = %s', (email, password))
-        cuenta = cursor.fetchone()
-        if cuenta:
-            return redirect('/home')
-        else:
-            return redirect('/login')
 
 
 @app.route('/home')
