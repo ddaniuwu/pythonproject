@@ -10,6 +10,8 @@
 <script src="{{ url_for('.static', filename='bar.js') }}"></script>
 <script src="{{ url_for('.static', filename='graphic.js') }}"></script>
 <script src="{{ url_for('.static', filename='alert.js') }}"></script>
+<script src="{{ url_for('.static', filename='camera.js') }}"></script>
+
 {% endblock %}
 
 
@@ -23,12 +25,12 @@
         <button class="btn btn-success">Abrir camara</button>
         <button class="btn btn-danger" id="add"  onclick="agregarFila()">Play</button>
         <button class="btn btn-danger" onclick="agregarFilaCajas()">Next</button>
+        <h1 class="text-center">Identificar objeto</h1>
+        <video src="" id="video" autoplay="true"></video>
     </div>
 
-
-  <div id="table_div"></div>
-
   <div>
+  
     <table border="1" class="table table-striped" id="tablaprueba">
       <thead>
         <tr>
