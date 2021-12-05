@@ -11,7 +11,7 @@
     <div class="container text-center">
       <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo">  
           <h1 class="h1 text-light">Login</h1>
-            <form >
+            <form method="POST" action="/save_user">
                 <label for="exampleInputEmail1" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" name="Nombre" required>
                 

@@ -49,3 +49,17 @@ def save_user():
     contraseña = request.form["password"]
     insertar_usuario(nombre , ap_paterno , ap_materno , email , contraseña)
     return redirect("/home")
+
+
+@app.route('/log_user' , methods=["POST"])
+def log_user():
+    email = request.form["email"]
+    password = request.form["password"]
+    conexion = obtener_conexion()
+    with conexion.cursor() as cursor:
+        cursor.execute('SELECT * FROM usuarios WHERE email = %s AND password = %s', (email, password))
+        cuenta = cursor.fetchone()
+        if cuenta:
+            return redirect('/home')
+        else:
+            return redirect('/login')
