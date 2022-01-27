@@ -3,9 +3,13 @@ body{
 }
 
 .container{
+    color: white;
     background-color: black;
 }
 
+.myText{
+    margin: 9rem;
+}
 
 footer{
     margin-top:2rem ;
@@ -19,6 +23,10 @@ img{
 
 a{
     color:#fff
+}
+
+a:hover{
+    color: green;
 }
 
 table {

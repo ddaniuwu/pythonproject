@@ -1,0 +1,46 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block styles %}
+
+{{super()}}
+ <link rel="stylesheet" href="{{ url_for('.static', filename='styles.css') }}">
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+ <script src="{{ url_for('.static', filename='bar3.js') }}"></script>
+
+ {% endblock %}
+
+{%  block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="card text-center">
+    <div class="card-header">
+      <h5 class="h1">SmarTrash</h3>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title"></h5>
+      <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo"class="card-img-top" alt="...">
+      <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+      <p class="myText card-text text-center h4">
+          SmarTrash impulsa la inovación y apoya el medio ambiente mediante la 
+          implementación de tecnologias emergentes. 
+          El proposito del proyecto es invitar a todo aquel en el TESCI a la separaciòn de
+          residuos de una manera agradable y nueva , tomando como base modelos 
+          que se han puesto a prueba en otros lugares.
+      </p>
+
+      <img src="{{ url_for('static', filename='images/trash.gif')}}" alt="Logo basura"class="card" alt="...">
+      <p>Al hacer uso de SmarTrash apoyas al medio ambiente , a continuación te presentamos algunos datos 
+         en cuanto a la separación de residuos en el país en años previos.
+      </p>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+
+{% endblock %}

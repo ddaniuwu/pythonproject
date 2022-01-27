@@ -51,7 +51,7 @@ def save_user():
     return redirect("/home")
 
 
-@app.route('/log_user' , methods=["POST"])
+@app.route('/log_user' , methods=["GET"])
 def log_user():
     email = request.form["email"]
     password = request.form["password"]
@@ -63,3 +63,14 @@ def log_user():
             return redirect('/home')
         else:
             return redirect('/login')
+
+
+@app.route('/about')
+def about():
+ return render_template('about.html')
+
+
+
+@app.route('/tools')
+def tools():
+ return render_template('tools.html')
