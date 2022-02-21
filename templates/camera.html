@@ -10,7 +10,6 @@
 <script src="{{ url_for('.static', filename='bar.js') }}"></script>
 <script src="{{ url_for('.static', filename='graphic.js') }}"></script>
 <script src="{{ url_for('.static', filename='alert.js') }}"></script>
-<script src="{{ url_for('.static', filename='camera.js') }}"></script>
 
 {% endblock %}
 
@@ -22,12 +21,13 @@
 <h1 class="text-center">Identificar objeto</h1>
 <div class="text-center">
       <img src="{{ url_for('static', filename='images/logo.jpeg')}}" alt="Platzi Logo"class="card-img-top" alt="...">
-        <button class="btn btn-success">Abrir camara</button>
-        <button class="btn btn-danger" id="add"  onclick="agregarFila()">Play</button>
-        <button class="btn btn-danger" onclick="agregarFilaCajas()">Next</button>
+        <a class="navbar-brand" href="{{ url_for('recognize')}}">
+          <button class="btn btn-success">Abrir camara</button>
+        </a>
+        <button class="btn btn-danger" id="add"  onclick="agregarFila()">Agregar</button>
+        <button class="btn btn-danger" onclick="agregarFilaCajas()">Siguiente</button>
         <h1 class="text-center">Identificar objeto</h1>
-        <video src="" id="video" autoplay="true"></video>
-    </div>
+</div>
 
   <div>
   
